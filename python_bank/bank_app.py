@@ -5,7 +5,7 @@ Python 기초 프로젝트: 콘솔 은행 계좌 관리 시스템
 """
 
 class Account:
-    def __init__(self, owner: str, balance: float = 0.10):
+    def __init__(self, owner: str, balance: float = 0.0):
         self.owner = owner
         self.balance = balance
 
