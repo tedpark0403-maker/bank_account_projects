@@ -4,14 +4,18 @@ Python 기초 프로젝트: 콘솔 은행 계좌 관리 시스템
 - 콘솔 인터랙션 및 입출금 예외 처리
 """
 
+# Account 클래스 정의
 class Account:  
     # 생성자: 계좌 소유자와 초기 잔액을 설정
     def __init__(self, owner: str, balance: float = 0.0):
         self.owner = owner
         self.balance = balance
 
+    # def __init__(self, bal: float = 0.0):
+    #     self.balance = bal
+
     # 입금 메서드: 금액을 입금하고 잔액을 업데이트
-    def deposit(self, amount: float) -> None:
+    def deposit(self, amount: float) :
         if amount <= 0:
             print("입금액은 0원보다 커야 합니다.")
             return
@@ -35,7 +39,8 @@ class Account:
 # 콘솔 기반 은행 앱 실행 함수
 def run_bank_app():
     # 계좌 생성
-    acc = Account("홍길동", 10000)
+    acc = Account(owner="홍길동", balance=10000 )
+    #acc= Account(bal=100)
     print(f"[{acc.owner}]님의 계좌가 생성되었습니다. (초기 잔액: {acc.balance:,.0f}원)")
 
     # 은행 메뉴 루프
@@ -43,7 +48,7 @@ def run_bank_app():
         print("\n=== 은행 메뉴 ===")
         print("1. 입금 | 2. 출금 | 3. 잔액 조회 | 4. 종료")
         # 사용자 입력 받기
-        choice = input("선택 >> ").strip()
+        choice = input("입력하세요. >> ").strip()
 
         # 선택에 따른 동작 수행
         if choice == "1":
